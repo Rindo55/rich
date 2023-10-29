@@ -14,7 +14,7 @@ from info import VERIFY_CLOSE, LANGUAGES, VERIFY_LOG, SHORT_URL, SHORT_API, MQTT
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery, Message
 from pyrogram import Client, filters, enums 
 from pyrogram.errors import FloodWait, UserIsBlocked, MessageNotModified, PeerIdInvalid
-from utils import shortlink, direct_gen_handler, get_shortlink, get_size, is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings
+from utils import shortlink, get_shortlink, get_size, is_subscribed, get_poster, search_gagala, temp, get_settings, save_group_settings
 from database.users_chats_db import db
 from database.ia_filterdb import Media, get_file_details, get_search_results, get_bad_files
 from database.filters_mdb import del_all, find_filter, get_filters
