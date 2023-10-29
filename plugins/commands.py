@@ -13,7 +13,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id
 from database.users_chats_db import db
 from info import VERIFY_CLOSE, VERIFY_LOG, GRP_LNK, CHNL_LNK, VERIFY, CHANNELS, MALIK5, MALIK, TUTORIAL_LINK_1, TUTORIAL_LINK_2, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT, START_MESSAGE, FORCE_SUB_TEXT, SUPPORT_CHAT
-from utils import direct_gen_handler, get_shortlink, get_settings, get_size, is_subscribed, save_group_settings, temp
+from utils import get_shortlink, get_settings, get_size, is_subscribed, save_group_settings, temp
 from database.connections_mdb import active_connection
 import re
 import json
