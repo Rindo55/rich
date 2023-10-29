@@ -250,7 +250,7 @@ Time : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
         user = message.from_user.id
         files_ = await get_file_details(file_id)
         files = files_[0]        
-        g = await get_shortlinks(chat_id, f"https://telegram.me/{temp.U_NAME}?start=file_{user}_{file_id}")
+        g = await shortlink(chat_id, f"https://telegram.me/{temp.U_NAME}?start=file_{user}_{file_id}")
         am = await client.send_message(chat_id=user,text=f"Hay {user_name}. Your file ready\n\n<b>▶️ File Name: <code>{replace_username(files.file_name)}</code> \n\n⌛️ Size: {get_size(files.file_size)}\n\n📂 File Link: {g}\n\n<i>Note: This message is deleted in 5 mins to avoid copyrights. Save the link to Somewhere else</i></b>", protect_content=True, reply_markup=InlineKeyboardMarkup(
                 [
                     [
