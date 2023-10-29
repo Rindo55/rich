@@ -135,19 +135,27 @@ Time : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
 
 @Client.on_message(filters.group & filters.text & filters.incoming)
 async def give_filter(client, message):
-    if message.from_user and message.from_user.id in CHECKED:
-        data = CHECKED[message.from_user.id]
-        if data >= 5:
-            await message.reply_text("if you want a movie, then you can take premium")
-            return
-        CHECKED[message.from_user.id] = data + 1
-    else:
-        CHECKED[message.from_user.id] = 1
-    k = await manual_filters(client, message)
-    if not k:
-        await auto_filter(client, message)
+    if G_FILTER:
+        if G_MODE.get(str(message.chat.id)) == "False":
+            return 
+        else:
 
-	
+            kd = await global_filters(client, message)
+        if kd == False:          
+            k = await manual_filters(client, message)
+            if k == False:
+                if FILTER_MODE.get(str(message.chat.id)) == "False":
+                    return
+                else:
+                    await auto_filter(client, message)   
+    else:
+        k = await manual_filters(client, message)
+        if k == False:
+            if FILTER_MODE.get(str(message.chat.id)) == "False":
+                return
+            else:
+                await auto_filter(client, message)   
+
 
 @Client.on_callback_query(filters.regex(r"^pmnext"))
 async def pm_next_page(bot, query):
