@@ -13,7 +13,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from database.ia_filterdb import Media, get_file_details, unpack_new_file_id
 from database.users_chats_db import db
 from info import VERIFY_CLOSE, VERIFY_LOG, GRP_LNK, CHNL_LNK, VERIFY, CHANNELS, MALIK5, MALIK, TUTORIAL_LINK_1, TUTORIAL_LINK_2, ADMINS, AUTH_CHANNEL, LOG_CHANNEL, PICS, BATCH_FILE_CAPTION, CUSTOM_FILE_CAPTION, PROTECT_CONTENT, START_MESSAGE, FORCE_SUB_TEXT, SUPPORT_CHAT
-from utils import get_shortlink, get_settings, get_size, is_subscribed, save_group_settings, temp
+from utils import shortlink, get_shortlink, get_settings, get_size, is_subscribed, save_group_settings, temp
 from database.connections_mdb import active_connection
 import re
 import json
@@ -250,7 +250,7 @@ Time : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
         user = message.from_user.id
         files_ = await get_file_details(file_id)
         files = files_[0]        
-        g = await shortlink(chat_id, f"https://telegram.me/{temp.U_NAME}?start=file_{user}_{file_id}")
+        g = await shortlink(f"https://telegram.me/{temp.U_NAME}?start=file_{user}_{file_id}")
         am = await client.send_message(chat_id=user,text=f"Hay {user_name}. Your file ready\n\n<b>▶️ File Name: <code>{replace_username(files.file_name)}</code> \n\n⌛️ Size: {get_size(files.file_size)}\n\n📂 File Link: {g}\n\n<i>Note: This message is deleted in 5 mins to avoid copyrights. Save the link to Somewhere else</i></b>", protect_content=True, reply_markup=InlineKeyboardMarkup(
                 [
                     [
