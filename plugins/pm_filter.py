@@ -275,18 +275,18 @@ async def next_page(bot, query):
 		
                 #btn = [[InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{nxreq}#{file.file_id}')] for file in files ]
         else:
-	    btn = []
-	    for file in files:
-                btn.append([
-                    InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Files_{chat_id}_{file.file_id}')
+            btn = [] 
+            for file in files: 
+                btn.append([ 
+                    InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Files_{chat_id}_{file.file_id}') 
                 ])	
     else:        
-        if settings["button"]:
-	    btn = []
-	    for file in files:
-                btn.append([
-                    InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Urllink_{chat_id}_{file.file_id}')
-                ])	
+        if settings["button"]: 
+            btn = [] 
+                for file in files: 
+                    btn.append([ 
+                        InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Urllink_{chat_id}_{file.file_id}') 
+                    ])	
         else:
 	    btn = []
 	    for file in files:
@@ -466,33 +466,32 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     chat_id = query.message.chat.id 
     settings = await get_settings(query.message.chat.id)
     if VERIFY:
-        if settings["button"]:	    
-	    btn = []
-	    for file in files:
-                btn.append([
-                    InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Files_{chat_id}_{file.file_id}')
+            btn = [] 
+            for file in files: 
+                btn.append([ 
+                    InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Files_{chat_id}_{file.file_id}') 
                 ])	
 		
                 #btn = [[InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{nxreq}#{file.file_id}')] for file in files ]
         else:
-	    btn = []
-	    for file in files:
-                btn.append([
-                    InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Files_{chat_id}_{file.file_id}')
+            btn = [] 
+            for file in files: 
+                btn.append([ 
+                    InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Files_{chat_id}_{file.file_id}') 
                 ])	
     else:        
-        if settings["button"]:
-	    btn = []
-	    for file in files:
-                btn.append([
-                    InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Urllink_{chat_id}_{file.file_id}')
-                ])	
+        if settings["button"]: 
+            btn = [] 
+                for file in files: 
+                    btn.append([ 
+                        InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Urllink_{chat_id}_{file.file_id}') 
+                    ])	
         else:
 	    btn = []
 	    for file in files:
                 btn.append([
                     InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Urllink_{chat_id}_{file.file_id}')
-                ])	
+                ])
     offset = 0
     if VERIFY:
         batch_ids = files
@@ -1662,33 +1661,33 @@ async def auto_filter(client, msg, spoll=False):
     chat_id = msg.message.chat.id 
     req = message.from_user.id if message.from_user else 0
     if VERIFY:        
-        if settings["button"]:	    
-	    btn = []
-	    for file in files:
-                btn.append([
-                    InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Files_{chat_id}_{file.file_id}')
+            btn = [] 
+            for file in files: 
+                btn.append([ 
+                    InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Files_{chat_id}_{file.file_id}') 
                 ])	
 		
                 #btn = [[InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{nxreq}#{file.file_id}')] for file in files ]
         else:
-	    btn = []
-	    for file in files:
-                btn.append([
-                    InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Files_{chat_id}_{file.file_id}')
+            btn = [] 
+            for file in files: 
+                btn.append([ 
+                    InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Files_{chat_id}_{file.file_id}') 
                 ])	
     else:        
-        if settings["button"]:
-	    btn = []
-	    for file in files:
-                btn.append([
-                    InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Urllink_{chat_id}_{file.file_id}')
-                ])	
+        if settings["button"]: 
+            btn = [] 
+                for file in files: 
+                    btn.append([ 
+                        InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Urllink_{chat_id}_{file.file_id}') 
+                    ])	
         else:
 	    btn = []
 	    for file in files:
                 btn.append([
                     InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Urllink_{chat_id}_{file.file_id}')
-                ])	
+                ])            
+
     batch_ids = files
     temp.BATCH_FILES[f"{message.chat.id}-{message.id}"] = batch_ids
     batch_link = f"batchfiles#{message.chat.id}#{message.id}#{message.from_user.id}"            
