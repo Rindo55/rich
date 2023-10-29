@@ -20,7 +20,7 @@ from database.ia_filterdb import Media, get_file_details, get_search_results, ge
 from database.filters_mdb import del_all, find_filter, get_filters
 from database.gfilters_mdb import find_gfilter, get_gfilters
 from plugins.helper.admin_check import admin_fliter
-
+from cachetools import TTLCache
 from image.edit_1 import bright, mix, black_white, g_blur, normal_blur, box_blur
 from image.edit_2 import circle_with_bg, circle_without_bg, sticker, edge_curved, contrast, sepia_mode, pencil, cartoon                             
 from image.edit_3 import green_border, blue_border, black_border, red_border
@@ -37,6 +37,7 @@ PM_SPELL_CHECK = {}
 FILTER_MODE = {}
 G_MODE = {}
 USER_SPELL_CHECK = {}
+CHECKED = TTLCache(maxsize=360, ttl=43200, timer=perf_counter)
 
 
 @Client.on_message(filters.command('autofilter') & filters.group & admin_fliter)
