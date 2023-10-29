@@ -266,8 +266,8 @@ async def next_page(bot, query):
     settings = await get_settings(query.message.chat.id)
     chat_id = query.message.chat.id
     if VERIFY:        
-        if settings["button"]:
-	    btn = []
+        if settings["button"]: 
+            btn = []
 	    for file in files:
                 btn.append([
                     InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Files_{chat_id}_{file.file_id}')
