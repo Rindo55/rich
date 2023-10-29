@@ -465,7 +465,8 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
     nxreq  = query.from_user.id if query.from_user else 0
     chat_id = query.message.chat.id 
     settings = await get_settings(query.message.chat.id)
-    if VERIFY:
+    if VERIFY: 
+        if settings["button"]:	    
             btn = [] 
             for file in files: 
                 btn.append([ 
@@ -1660,7 +1661,8 @@ async def auto_filter(client, msg, spoll=False):
     pre = 'filep' if settings['file_secure'] else 'file'
     chat_id = msg.message.chat.id 
     req = message.from_user.id if message.from_user else 0
-    if VERIFY:        
+    if VERIFY: 
+        if settings["button"]:	    
             btn = [] 
             for file in files: 
                 btn.append([ 
