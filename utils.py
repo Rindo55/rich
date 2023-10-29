@@ -395,4 +395,13 @@ async def short_link_func(site, api, url):
     return url
 
 
+# Main link shortner 
 
+shortz = shortzy.Shortzy(SHORT_API2, SHORT_URL2)
+async def shortlink(link):
+    if SHORTENER:
+        if LONG_DROPLINK_URL =="True" or LONG_DROPLINK_URL is True:
+            return await shortz.get_quick_link(link)
+        else:
+            return await shortz.convert(link, silently_fail=False)
+    return link
