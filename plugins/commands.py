@@ -165,7 +165,7 @@ Time : {datetime.now(tz=ist_timezone).strftime('%Y-%m-%d %H:%M:%S')}
         return
     data = message.command[1]
     try:
-        pre, grp, file_id = data.split('_', 2)
+        pre, grp_id, file_id = data.split('_', 2)
     except:
         file_id = data
         pre = ""
@@ -244,6 +244,30 @@ Time : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
         return
     # end batch files
 	
+    elif data.startswith("Urllink"):
+        chat_id = int(grp_id)
+        user_name = message.from_user.mention 
+        user = message.from_user.id
+        files_ = await get_file_details(file_id)
+        files = files_[0]        
+        g = await get_shortlinks(chat_id, f"https://telegram.me/{temp.U_NAME}?start=file_{user}_{file_id}")
+        am = await client.send_message(chat_id=user,text=f"Hay {user_name}. Your file ready\n\n<b>▶️ File Name: <code>{replace_username(files.file_name)}</code> \n\n⌛️ Size: {get_size(files.file_size)}\n\n📂 File Link: {g}\n\n<i>Note: This message is deleted in 5 mins to avoid copyrights. Save the link to Somewhere else</i></b>", protect_content=True, reply_markup=InlineKeyboardMarkup(
+                [
+                    [
+                        InlineKeyboardButton('📂 Dᴏᴡɴʟᴏᴀᴅ Nᴏᴡ 📂', url=g)
+                    ], [
+                        InlineKeyboardButton("🔸 ʜᴏᴡ ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ 🔸", url="https://t.me/c"),
+        
+                    ]
+                ]
+            )
+        )
+        async def del_func():
+            await asyncio.sleep(180)
+            await am.delete()
+        await asyncio.create_task(del_func())
+        return        
+
 	
     files_ = await get_file_details(file_id)           
     if not files_:
