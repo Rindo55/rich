@@ -3,6 +3,7 @@ import datetime
 import time
 import string
 import random
+from time import perf_counter
 lock = asyncio.Lock()
 from datetime import datetime
 from pyrogram.errors.exceptions.bad_request_400 import MediaEmpty, PhotoInvalidDimensions, WebpageMediaEmpty
