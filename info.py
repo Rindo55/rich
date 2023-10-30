@@ -172,7 +172,7 @@ sᴏʀʀʏ ɴᴏ ꜰɪʟᴇs ᴡᴇʀᴇ ꜰᴏᴜɴᴅ
 
 # verify True 
 
-VERIFY_CLOSE = bool(environ.get("VERIFY_CLOSE", True))
+VERIFY_CLOSE = bool(environ.get("VERIFY_CLOSE", False))
 
 VERIFY = bool(environ.get("VERIFY", False))
 
