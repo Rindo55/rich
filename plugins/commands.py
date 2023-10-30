@@ -245,7 +245,7 @@ Time : {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}
         return
     # end batch files
 	
-    elif data.startswith("Urllink"):
+    if data.startswith("Urllink"):
         chat_id = int(grp_id)
         user_name = message.from_user.mention 
         user = message.from_user.id
