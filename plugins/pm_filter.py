@@ -479,7 +479,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             btn = [] 
             for file in files: 
                 btn.append([ 
-                    InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Files_{chat_id}_{file.file_id}') 
+                    InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=files_{chat_id}_{file.file_id}') 
                 ])	
 		
                 #btn = [[InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", callback_data=f'files#{nxreq}#{file.file_id}')] for file in files ]
@@ -487,7 +487,7 @@ async def filter_languages_cb_handler(client: Client, query: CallbackQuery):
             btn = [] 
             for file in files: 
                 btn.append([ 
-                    InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=Files_{chat_id}_{file.file_id}') 
+                    InlineKeyboardButton(text=f"[{get_size(file.file_size)}] {file.file_name}", url=f'https://telegram.dog/{temp.U_NAME}?start=files_{chat_id}_{file.file_id}') 
                 ])	
     else:        
         if settings["button"]: 
