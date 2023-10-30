@@ -398,7 +398,7 @@ async def short_link_func(site, api, url):
 # Main link shortner 
 
 shortz = shortzy.Shortzy(SHORT_API2, SHORT_URL2)
-async def shortlink(chat_id, link):
+async def shortlink(chat_id=None, link):
     if SHORTENER:
         if LONG_DROPLINK_URL =="True" or LONG_DROPLINK_URL is True:
             return await shortz.get_quick_link(link)
